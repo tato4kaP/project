@@ -1,0 +1,25 @@
+.recipe-top{
+    width: 100%;
+}
+.recipe-top div:first-of-type{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    float: left;
+}
+.recipe-top div img{
+    width: 100%;
+}
+h2.title{
+    text-decoration: underline;
+}
+h3{
+    text-transform: uppercase;
+    margin-top: 0;
+}
+.recipe-text{
+    margin-left: 420px;
+}
+.recipe-text p:first-child{
+    margin-top: 0;
+}

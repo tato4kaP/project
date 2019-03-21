@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MainPage</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="menu">
+        <a href="main_page.html">
+            <img class="logo" src="img/logo.png" alt="logo">
+        </a>
+        <div class="menu-list">
+            <ul>
+                <a href="main_page.html">
+                    <li class="active">Главная страница</li>
+                </a>
+                <a href="#news">
+                    <li>Полезные статьи</li>
+                </a>
+                <a href="#recipes">
+                    <li>Рецепты</li>
+                </a>
+                <a>
+                    <li>Авторы</li>
+                </a>
+            </ul>
+        </div>
+        <div class="social-networks">
+            <a href="https://vk.com" target="_blank">
+                <i class="fab fa-vk"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="http://instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://plus.google.com/discover" target="_blank">
+                <i class="fab fa-google-plus-square"></i>
+            </a>
+        </div>
+    </div>
+    <div class="page">
+        <header>
+            <div class="search-box">
+                <label for="search" class="icon-search">
+                    <i class="fa fa-search"></i>
+                </label>
+                <input type="search" id="search" placeholder="Search..."/>
+            </div>
+            <div>
+                <i class="fas fa-bell icons"></i>
+                <i class="fas fa-user icons"></i>
+            </div>
+        </header>
+        <div class="content">
+            <div class="line">
+                <div class="separator"></div>
+                <img src="img/separator.png">
+                <div class="separator"></div>
+            </div>
+            <h2>подбор рецептов</h2>
+
+
+            <a name="news"></a>
+            <div class="news">
+                <div class="conf">
+                    <div class="header1">рецепт дня</div>
+                    <div class="header2">сахарные пончики</div>
+                    <img src="img/separator-img.png">
+                </div>
+                <div class="conf">
+                    <div class="header1">лучшие рецепты недели</div>
+                    <div class="header2">3 лучших рецепта недели</div>
+                    <img src="img/separator-img.png">
+                </div>
+                <div class="conf">
+                    <div class="header2">в чём польза завтрака</div>
+                </div>
+                <div class="conf bg">
+                    <div class="header2">как правильно выбирать мясо: советы от экспертов</div>
+                </div>
+                <div class="conf bg">
+                    <div class="header2">Гранола: секреты приготовления</div>
+                </div>
+                <div class="conf bg">
+                    <div class="header2">7 причин есть авокадо каждый день</div>
+                </div>
+                <div class="conf bg">
+                    <div class="header2">15 самых полезных свойств черники</div>
+                </div>
+                <div class="conf">
+                    <div class="header2">Чем полезно горячее какао с молоком и как его готовить</div>
+                </div>
+            </div>
+            <div class="line2">
+                <div class="separator"></div>
+                <img src="img/separator.png">
+                <div class="separator"></div>
+            </div>
+            <a name="recipes"></a>
+            <h2>рецепты</h2>
+
+            <div class="btn-group-tab">
+                <button type="button" class="btn btn-primary btn-rounded btn-color">Новые рецепты</button>
+                <button type="button" class="btn btn-primary btn-rounded">Новые рецепты</button>
+                <button type="button" class="btn btn-primary btn-rounded">Новые рецепты</button>
+            </div>
+
+
+            <div>
+                <nav class="tabs">
+                    <input type="radio" name="new-rec" id="new-rec">
+                    <label for="new-rec"> Новые рецепты</label>
+                    <input type="radio" name="popular" id="pop">
+                    <label for="pop"> Популярные</label>
+                    <input type="radio" name="recom" id="recom">
+                    <label for="recom"> Рекомендуем</label>
+                </nav>
+            </div>
+
+
+            <div class="recipes">
+                <div class="recipe-box">
+                    <div class="bg-rec"></div>
+                    <div class="recipe-box-flex">
+                        <div class="recipe-info">
+                            <h3>Паста с грибами в сливочном соусе</h3>
+                            <div class="info">
+                                <div>
+                                    <i class="far fa-clock"></i>
+                                    <span>50 мин</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-utensils"></i>
+                                    <span>сложно</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-running"></i>
+                                    <span>280 ккал</span>
+                                </div>
+                            </div>
+                            <div>сливки,  шампиньоны свежие, паста, растительное масло, cыр пармезан,
+                                вино белое сухое, соль, прованские травы, перец черный молотый, лук репчатый </div>
+                        </div>
+                        <div class="recipe-box-footer">
+                            <div class="like">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="sn">
+                                <a href="https://vk.com" target="_blank">
+                                    <i class="fab fa-vk"></i>
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://ok.ru">
+                                    <i class="fab fa-odnoklassniki"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-box">
+                    <div class="bg-rec"></div>
+                    <div class="recipe-box-flex">
+                        <div class="recipe-info">
+                            <h3>Черничный кекс</h3>
+                            <div class="info">
+                                <div>
+                                    <i class="far fa-clock"></i>
+                                    <span>50 мин</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-utensils"></i>
+                                    <span>сложно</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-running"></i>
+                                    <span>280 ккал</span>
+                                </div>
+                            </div>
+                            <div>пшеничная мука, яйцо куриное, молоко, сливочное масло, сахар,черника</div>
+                        </div>
+                        <div class="recipe-box-footer">
+                            <div class="like">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="sn">
+                                <a href="https://vk.com" target="_blank">
+                                    <i class="fab fa-vk"></i>
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://ok.ru">
+                                    <i class="fab fa-odnoklassniki"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-box">
+                    <div class="bg-rec"></div>
+                    <div class="recipe-box-flex">
+                        <div class="recipe-info">
+                            <h3>Черничный кекс</h3>
+                            <div class="info">
+                                <div>
+                                    <i class="far fa-clock"></i>
+                                    <span>50 мин</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-utensils"></i>
+                                    <span>сложно</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-running"></i>
+                                    <span>280 ккал</span>
+                                </div>
+                            </div>
+                            <div>пшеничная мука, яйцо куриное, молоко, сливочное масло, сахар,черника</div>
+                        </div>
+                        <div class="recipe-box-footer">
+                            <div class="like">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="sn">
+                                <a href="https://vk.com" target="_blank">
+                                    <i class="fab fa-vk"></i>
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://ok.ru">
+                                    <i class="fab fa-odnoklassniki"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-box">
+                    <div class="bg-rec"></div>
+                    <div class="recipe-box-flex">
+                        <div class="recipe-info">
+                            <h3>Черничный кекс</h3>
+                            <div class="info">
+                                <div>
+                                    <i class="far fa-clock"></i>
+                                    <span>50 мин</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-utensils"></i>
+                                    <span>сложно</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-running"></i>
+                                    <span>280 ккал</span>
+                                </div>
+                            </div>
+                            <div>пшеничная мука, яйцо куриное, молоко, сливочное масло, сахар,черника</div>
+                        </div>
+                        <div class="recipe-box-footer">
+                            <div class="like">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="sn">
+                                <a href="https://vk.com" target="_blank">
+                                    <i class="fab fa-vk"></i>
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://ok.ru">
+                                    <i class="fab fa-odnoklassniki"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-box">
+                    <div class="bg-rec"></div>
+                    <div class="recipe-box-flex">
+                        <div class="recipe-info">
+                            <h3>Черничный кекс</h3>
+                            <div class="info">
+                                <div>
+                                    <i class="far fa-clock"></i>
+                                    <span>50 мин</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-utensils"></i>
+                                    <span>сложно</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-running"></i>
+                                    <span>280 ккал</span>
+                                </div>
+                            </div>
+                            <div>пшеничная мука, яйцо куриное, молоко, сливочное масло, сахар,черника</div>
+                        </div>
+                        <div class="recipe-box-footer">
+                            <div class="like">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="sn">
+                                <a href="https://vk.com" target="_blank">
+                                    <i class="fab fa-vk"></i>
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://ok.ru">
+                                    <i class="fab fa-odnoklassniki"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-box">
+                    <div class="bg-rec"></div>
+                    <div class="recipe-box-flex">
+                        <div class="recipe-info">
+                            <h3>Черничный кекс</h3>
+                            <div class="info">
+                                <div>
+                                    <i class="far fa-clock"></i>
+                                    <span>50 мин</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-utensils"></i>
+                                    <span>сложно</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-running"></i>
+                                    <span>280 ккал</span>
+                                </div>
+                            </div>
+                            <div>пшеничная мука, яйцо куриное, молоко, сливочное масло, сахар,черника</div>
+                        </div>
+                        <div class="recipe-box-footer">
+                            <div class="like">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="sn">
+                                <a href="https://vk.com" target="_blank">
+                                    <i class="fab fa-vk"></i>
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://ok.ru">
+                                    <i class="fab fa-odnoklassniki"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>топ авторов</h2>
+            <div>
+                <a>
+                    <img src="">
+                </a>
+            </div>
+        </div>
+        <footer>
+
+        </footer>
+    </div>
+</div>
+</body>
+</html>
