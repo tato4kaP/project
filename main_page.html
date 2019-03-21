@@ -5,15 +5,20 @@
     <title>MainPage</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,500" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div class="wrapper">
     <div class="menu">
-        <a href="main_page.html">
-            <img class="logo" src="img/logo.png" alt="logo">
-        </a>
+        <input type="checkbox" id="menu">
+        <div class="logo">
+            <a href="main_page.html">
+                <img class="logo-img" src="img/logo.png" alt="logo">
+            </a>
+            <label class="menu-btn" for="menu"><i class="fas fa-bars"></i></label>
+        </div>
         <div class="menu-list">
             <ul>
                 <a href="main_page.html">
@@ -106,24 +111,14 @@
             <a name="recipes"></a>
             <h2>рецепты</h2>
 
-            <div class="btn-group-tab">
-                <button type="button" class="btn btn-primary btn-rounded btn-color">Новые рецепты</button>
-                <button type="button" class="btn btn-primary btn-rounded">Новые рецепты</button>
-                <button type="button" class="btn btn-primary btn-rounded">Новые рецепты</button>
-            </div>
-
-
-            <div>
-                <nav class="tabs">
-                    <input type="radio" name="new-rec" id="new-rec">
-                    <label for="new-rec"> Новые рецепты</label>
-                    <input type="radio" name="popular" id="pop">
-                    <label for="pop"> Популярные</label>
-                    <input type="radio" name="recom" id="recom">
-                    <label for="recom"> Рекомендуем</label>
-                </nav>
-            </div>
-
+            <nav class="tabs">
+                <input type="radio" name="tab" id="new-rec" checked>
+                <label for="new-rec"> Новые рецепты</label>
+                <input type="radio" name="tab" id="pop">
+                <label for="pop"> Популярные</label>
+                <input type="radio" name="tab" id="recom">
+                <label for="recom"> Рекомендуем</label>
+            </nav>
 
             <div class="recipes">
                 <div class="recipe-box">
@@ -145,8 +140,9 @@
                                     <span>280 ккал</span>
                                 </div>
                             </div>
-                            <div>сливки,  шампиньоны свежие, паста, растительное масло, cыр пармезан,
-                                вино белое сухое, соль, прованские травы, перец черный молотый, лук репчатый </div>
+                            <div>сливки, шампиньоны свежие, паста, растительное масло, cыр пармезан,
+                                вино белое сухое, соль, прованские травы, перец черный молотый, лук репчатый
+                            </div>
                         </div>
                         <div class="recipe-box-footer">
                             <div class="like">
@@ -363,9 +359,27 @@
                 </div>
             </div>
             <h2>топ авторов</h2>
-            <div>
+            <div class="author-top">
                 <a>
-                    <img src="">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg">
+                </a>
+                <a>
+                    <img src="https://randomuser.me/api/portraits/women/66.jpg">
+                </a>
+                <a>
+                    <img src="https://randomuser.me/api/portraits/women/67.jpg">
+                </a>
+                <a>
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg">
+                </a>
+                <a>
+                    <img src="https://randomuser.me/api/portraits/women/69.jpg">
+                </a>
+                <a>
+                    <img src="https://randomuser.me/api/portraits/women/70.jpg">
+                </a>
+                <a>
+                    <img src="https://randomuser.me/api/portraits/women/12.jpg">
                 </a>
             </div>
         </div>
