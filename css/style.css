@@ -108,6 +108,7 @@ div.menu-list {
     background: #C3B089;
     color: #fff;
     outline: none;
+    border: none;
     font: 400 14px Oswald;
     padding: 10px 40px;
 }
@@ -220,6 +221,9 @@ label {
     -ms-transition: width .55s ease;
     -o-transition: width .55s ease;
     transition: width .55s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .search-box input#search::-webkit-input-placeholder {
