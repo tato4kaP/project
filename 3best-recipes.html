@@ -2,31 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>3best-recipes</title>
+    <title>page-3best</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="stylesheet" href="style2.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style2.css" type="text/css">
+    <link rel="stylesheet" href="css/popover.css" type="text/css">
+    <link rel="stylesheet" href="css/modal.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div class="wrapper">
     <div class="menu">
-        <a href="main_page.html">
-            <img class="logo" src="img/logo.png" alt="logo">
-        </a>
+        <input type="checkbox" id="menu">
+        <div class="logo">
+            <a href="main_page.html">
+                <img class="logo-img" src="img/logo.png" alt="logo">
+            </a>
+            <label class="menu-btn" for="menu"><i class="fas fa-bars"></i></label>
+        </div>
         <div class="menu-list">
-            <ul>
-                <a href="main_page.html">
+            <ul class="list-group" id="menu-list">
+                <a href="#top" class="list-group-item list-group-item-action active">
                     <li>Главная страница</li>
                 </a>
-                <a href="#news">
-                    <li class="active">Полезные статьи</li>
+                <a href="#news" class="list-group-item list-group-item-action">
+                    <li>Полезные статьи</li>
                 </a>
-                <a href="#recipes">
+                <a href="#recipes" class="list-group-item list-group-item-action">
                     <li>Рецепты</li>
                 </a>
-                <a>
+                <a href="#authors" class="list-group-item list-group-item-action">
                     <li>Авторы</li>
                 </a>
             </ul>
@@ -46,17 +53,46 @@
             </a>
         </div>
     </div>
-    <div class="page">
-        <header>
+    <div class="page" data-spy="scroll" data-target="#menu-list">
+        <header id="top">
             <div class="search-box">
                 <label for="search" class="icon-search">
                     <i class="fa fa-search"></i>
                 </label>
-                <input type="search" id="search" placeholder="Search..."/>
+                <input type="search" id="search" placeholder="Поиск..."/>
             </div>
-            <div>
-                <i class="fas fa-bell icons"></i>
-                <i class="fas fa-user icons"></i>
+            <div class="icon-box">
+                <button
+                        type="button"
+                        data-toggle="popover"
+                        data-placement="bottom"
+                        data-trigger="focus"
+                        data-content="Нет новых уведомлений">
+                    <i class="fas fa-bell icons"></i>
+                </button>
+                <div class="container">
+                    <input id="modal" type="checkbox">
+                    <label class="modal-button" for="modal">
+                        <i class="fas fa-user icons"></i>
+                    </label>
+                    <label class="modal-background" for="modal"></label>
+                    <div class="modal-content">
+                        <form id="log" action="http://fe.it-academy.by/TestForm.php" method="post">
+                            <label class="modal-close" for="modal">&#10005;</label>
+                            <div class="form-content">
+                                <label>
+                                    Email:
+                                    <input type="email" required name="email">
+                                </label>
+                                <label>
+                                    Пароль:
+                                    <input type="password" required name="password">
+                                </label>
+                                <button type="submit">Войти</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </header>
         <div class="content">
@@ -66,42 +102,155 @@
                 <div class="separator"></div>
             </div>
             <h2>3 лучших рецепта недели</h2>
-            <div class="recipe-top">
+            <div class="recipe-top3">
                 <h2 class="title">панкейки</h2>
-                <div>
-                    <img src="img/pancakes.jpg">
-                </div>
                 <div class="recipe-text">
+                    <div class="image-block">
+                        <img class="img-recipe" src="img/pancakes.jpg">
+                    </div>
                     <p>
-                        Панкейки (Pancakes), или американские блинчики -это одно из самых распространённых блюд
+                        Панкейки (Pancakes), или американские блинчики - это одно из самых распространённых блюд
                         Соединенных штатов и Канады. Небольшие круглые пышные блинчики, обильно политые сиропом, входят
                         в состав практически любого завтрака. В переводе означает просто – пирожное в сковороде (pan-сковорода,
                         cake-пирожное).
                     </p>
                     <h3>ингредиенты</h3>
-                    <p>Яйцо куриное  - 2 штуки<br>
-                        Соль 1 чайная ложка<br>
-                        Сахар 3 столовые ложки<br>
-                        Молоко 2 стакана<br>
-                        Пшеничная мука 2 стакана<br>
-                        Гашеная сода 1 чайная ложка<br>
-                        Растительное масло ¼ стакана</p>
-                    <h3>инструкция приготовления</h3>
                     <p>
-                        1. Яйца взбить с сахаром и солью до появления пены.<br>
-                        2. Добавить стакан молока, хорошо взбить венчиком, постепенно всыпать муку, постоянно разбивая комочки венчиком.<br>
-                        3. Повторить предыдущий пункт, добавив оставшиеся стаканы молока и муки.<br>
-                        4. Влить растительное масло (можно заменить топленым сливочным).<br>
-                        5. Погасить соду, добавить в тесто и еще раз хорошо перемешать. Оставить постоять минут 5–10. За это время разогреть сковороду.<br>
-                        6. Жарить на умеренном огне. Как только появятся и начнут лопаться пузырьки, перевернуть оладушек и жарить еще секунд 20.
+
+                    <ul class="ingredients">
+                        <li>Яйцо куриное  - 2 штуки</li>
+                        <li>Соль  - 1 чайная ложка</li>
+                        <li>Сахар  - 3 столовые ложки</li>
+                        <li>Молоко  - 2 стакана</li>
+                        <li>Пшеничная мука  - 2 стакана</li>
+                        <li>Гашеная сода  - 1 чайная ложка</li>
+                        <li>Растительное масло  - ¼ стакана</li>
+                    </ul>
                     </p>
+                    <h3>инструкция приготовления</h3>
+                    <ol class="instruction">
+                        <li>Яйца взбить с сахаром и солью до появления пены.</li>
+                        <li>Добавить стакан молока, хорошо взбить венчиком, постепенно всыпать муку, постоянно разбивая комочки венчиком.</li>
+                        <li>Повторить предыдущий пункт, добавив оставшиеся стаканы молока и муки.</li>
+                        <li>Влить растительное масло (можно заменить топленым сливочным).</li>
+                        <li>Погасить соду, добавить в тесто и еще раз хорошо перемешать. Оставить постоять минут 5–10. За это время разогреть сковороду.</li>
+                        <li>Гашеная сода  - 1 чайная ложка</li>
+                        <li>Жарить на умеренном огне. Как только появятся и начнут лопаться пузырьки, перевернуть оладушек и жарить еще секунд 20.</li>
+                    </ol>
                 </div>
             </div>
+            <div class="recipe-top3">
+                <h2 class="title">сырники</h2>
+                <div class="recipe-text">
+                    <div class="image-block">
+                        <img class="img-recipe" src="img/surniki.jpg">
+                    </div>
+                    <p>
 
-
+                        Главный секрет идеальных сырников — а точнее творожников, — творог нужно протереть через мелкое
+                        сито и отжать от влаги. Жирность предпочтительна не больше и не меньше 9%. Тесто должно получиться
+                        эластичным, чтобы при надавливании сырник не треснул на сковородке, а сохранил форму. Если все
+                        сделать правильно, получатся нежные однородные кругляшки под плотной румяной корочкой. Сырники
+                        можно запекать в духовке или готовить на пару. В рецепте не исключаются эксперименты с начинкой —
+                        сухофрукты, орехи, свежие фрукты и даже картофель лишними не будут.
+                    </p>
+                    <h3>ингредиенты</h3>
+                    <ul class="ingredients">
+                        <li>Творог 500 г</li>
+                        <li>Яйцо куриное 2 штуки</li>
+                        <li>Пшеничная мука 6 столовых ложек</li>
+                        <li>Сахар 2 столовые ложки</li>
+                        <li>Подсолнечное масло 5 столовых ложек</li>
+                    </ul>
+                    <h3>инструкция приготовления</h3>
+                    <ol class="instruction">
+                        <li>Положите весь творог в кастрюльку и разомните его вилкой так, чтобы в нем не осталось крупных комков.
+                            Разбейте в него яйца, всыпьте сахар и тщательно все перемешайте. Лучше не использовать слишком сухой
+                            или слишком влажный творог, иначе сырники будут разваливаться в процессе приготовления.</li>
+                        <li>Всыпьте в творог 5 столовых ложек (с горкой) муки и тщательно перемешайте. Можно добавить немного
+                            больше муки, сырники получатся тогда более плотными. Или муки можно добавить чуть меньше, и тогда
+                            сырники будут нежнее. В итоге у вас должна получиться однородная масса, из которой можно будет лепить
+                            сырники. </li>
+                        <li>Поставьте сковороду на средний огонь и налейте в нее подсолнечное масло.</li>
+                        <li>Насыпьте на тарелку немного муки. Слепите несколько небольших шариков из получившейся творожной массы
+                            и положите их на тарелку. Лучше лепить разом 4–5 шариков — столько, сколько поместится одновременно на
+                            сковороду. Затем по очереди обкатывайте творожные шарики в муке, плющите их в небольшие лепешки (они не
+                            должны быть слишком тонкие) и выкладывайте на сковороду.</li>
+                        <li>Обжаривайте сырники 1–2 минуты до появления золотистой корочки. Затем переверните их на другую сторону
+                            и также обжарьте до золотистого состояния.</li>
+                        <li>Повторяйте, пока творог не закончится.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="recipe-top3">
+                <h2 class="title">блины на кефире</h2>
+                <div class="recipe-text">
+                    <div class="image-block">
+                        <img class="img-recipe" src="img/bliny.jpg">
+                    </div>
+                    <p>
+                        Блины очень универсальное блюдо и может и подаваться на завтрак, обед, ужин или перекус. Благодаря
+                        кефиру тесто принимает совершенно другую консистенцию, в отличии от блинов на молоке так как кефир
+                        при взаимодействии с содой выделяет углекислый газ, которых и разрыхляет тесто, делая его пористым
+                        и воздушным.
+                    </p>
+                    <h3>ингредиенты</h3>
+                    <ul class="ingredients">
+                        <li>Пшеничная мука 1 стакан</li>
+                        <li>Кефир 1 стакан</li>
+                        <li>Вода 1 стакан</li>
+                        <li>Яйцо куриное 2 штуки</li>
+                        <li>Соль ½ чайной ложки</li>
+                        <li>Сода на кончике ножа</li>
+                        <li>Сахар 1 столовая ложка</li>
+                        <li>Растительное масло 2 столовые ложки</li>
+                    </ul>
+                    <h3>инструкция приготовления</h3>
+                    <ol class="instruction">
+                        <li>Взбить яйца до появления легкой пены, добавить соль.</li>
+                        <li>Влить в яйца стакан кипятка и продолжать взбивать.</li>
+                        <li>Затем добавьте стакан кефира.</li>
+                        <li>Муку просеять, смешать с содой и по ложке добавить в жидкость. Тщательно размешать, чтобы не образовались комки. Добавить ложку сахара и растительное масло.</li>
+                        <li>Взять любимую сковороду для блинов и выпекать на ней тонкие блинчики. Обжаривать с двух сторон до красивого золотисто-коричневого цвета. </li>
+                    </ol>
+                </div>
+            </div>
         </div>
-
+        <footer>
+            <ul class="list-footer">
+                <a href="#top" class="list-group-item list-group-item-action active">
+                    <li>Главная страница</li>
+                </a>
+                <a href="#news" class="list-group-item list-group-item-action">
+                    <li>Полезные статьи</li>
+                </a>
+                <a href="#recipes" class="list-group-item list-group-item-action">
+                    <li>Рецепты</li>
+                </a>
+                <a href="#authors" class="list-group-item list-group-item-action">
+                    <li>Авторы</li>
+                </a>
+            </ul>
+            <div class="social-networks-footer">
+                <a href="https://vk.com" target="_blank">
+                    <i class="fab fa-vk"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="http://instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://plus.google.com/discover" target="_blank">
+                    <i class="fab fa-google-plus-square"></i>
+                </a>
+            </div>
+        </footer>
     </div>
 </div>
+<script src="js/jquery-3.3.1.min.js" type="application/javascript"></script>
+<script src="js/popper.min.js" type="application/javascript"></script>
+<script src="js/bootstrap.bundle.min.js" type="application/javascript"></script>
+<script src="js/main.js" type="application/javascript"></script>
 </body>
 </html>

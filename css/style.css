@@ -1,3 +1,7 @@
+html {
+    min-width: 320px;
+}
+
 body {
     margin: 0;
     font-family: 'Oswald', sans-serif;
@@ -32,7 +36,15 @@ a {
     display: none;
 }
 
-.wrapper .menu a:hover {
+.menu a:hover,
+label,
+.container .modal-content,
+.container .modal-background,
+.icons:hover,
+.conf:hover,
+nav.tabs label,
+.subscribe button,
+.recipe-box {
     cursor: pointer;
 }
 
@@ -53,7 +65,7 @@ div.menu-list {
     transition: height 2s linear;
 }
 
-ul {
+.menu-list ul {
     list-style-type: none;
     padding-left: 0;
     z-index: 3;
@@ -61,19 +73,25 @@ ul {
     margin: auto;
 }
 
-li {
+.menu-list li {
     text-align: center;
     text-decoration: none;
     color: rgb(239, 239, 239);
 }
 
-li.active {
+.menu-list .list-group-item.active li {
     background-color: rgb(37, 38, 40);
     border-left: 3px solid rgb(217, 190, 143);
 }
 
-li:hover {
+.menu-list li:hover {
     text-decoration: underline;
+}
+
+.filters {
+    display: flex;
+    position: relative;
+    z-index: 10;
 }
 
 .social-networks {
@@ -94,9 +112,11 @@ li:hover {
 
 /*Основной блок*/
 .page {
+    position: relative;
     flex: 1;
     overflow: auto;
     max-height: 100vh;
+    height: 100vh;
 }
 
 .content {
@@ -114,11 +134,148 @@ header {
     padding: 0 30px;
 }
 
+label {
+    transition: all 250ms;
+}
+
+.icon-box {
+    display: flex;
+}
+
+.icon-box button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.container {
+    position: relative;
+}
+
+.container .modal-button {
+    position: relative;
+    display: block;
+    transition: all 250ms;
+}
+
+.container .modal-content,
+.container .modal-background {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.container .modal-background {
+    transition: height 250ms;
+}
+
+.container .modal-content {
+    transform: scale(0);
+    transition: transform 500ms;
+}
+
+.container #modal {
+    display: none;
+}
+
+.container #modal:checked ~ .modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    visibility: visible;
+    opacity: 1;
+    transition: height 250ms;
+    z-index: 1;
+}
+
+.container #modal:checked ~ .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -10%;
+    margin-left: -10%;
+    width: 24vw;
+    height: auto;
+    padding: 40px;
+    background-color: rgb(239, 239, 239);
+    border-radius: 3px;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    cursor: auto;
+    transform: scale(1);
+    transition: transform 500ms;
+    z-index: 1;
+}
+
+.container #modal:checked ~ .modal-content .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    color: rgba(51, 51, 51, 0.4);
+    transition: color 200ms, transform 500ms;
+}
+
+.container #modal:checked ~ .modal-content .modal-close:hover, .container #modal:checked ~ .modal-content .modal-close:focus {
+    color: rgb(0, 0, 0);
+    transform: rotate(360deg);
+}
+
+.container #modal:checked ~ .modal-content p {
+    position: relative;
+    margin: 0 0 20px 0;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.container #modal:checked ~ .modal-content .modal-content-button {
+    position: relative;
+    float: right;
+    margin: 0;
+    padding: 10px 20px;
+    color: rgb(239, 239, 239);
+    font-weight: 100;
+    border-radius: 3px;
+    background-color: rgb(211, 211, 211);
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.form-content label {
+    display: flex;
+    padding: 0 0 5px 0;
+    flex-direction: column;
+}
+.form-content input{
+    height: 25px;
+}
+
+.form-content button {
+    background-color: rgb(211, 211, 211);
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
 .icons {
     font-size: 20px;
-    color: lightgray;
-    margin: 0 20px;
+    color: rgb(211, 211, 211);
+    margin: 0 10px;
 }
+
 
 .search-box {
     width: 250px;
@@ -133,10 +290,10 @@ header {
 .search-box input#search {
     width: 25px;
     height: 25px;
-    background: #fff;
+    background: rgb(255, 255, 255);
     border: none;
     font-size: 15px;
-    color: lightgray;
+    color: rgb(211, 211, 211);
     padding-left: 15px;
     -webkit-transition: width .55s ease;
     -moz-transition: width .55s ease;
@@ -146,7 +303,7 @@ header {
 }
 
 .search-box input#search::-webkit-input-placeholder {
-    color: lightgray;
+    color: rgb(211, 211, 211);
 }
 
 .search-box .icon-search {
@@ -158,7 +315,7 @@ header {
 .search-box:hover input#search {
     outline: none;
     width: 300px;
-    color: #000;
+    color: rgb(0, 0, 0);
 }
 
 .line {
@@ -196,6 +353,17 @@ header {
 .news > div {
     margin-bottom: 10px;
     background-size: auto 300px;
+    background-position: 0 0;
+}
+
+.conf:hover {
+    background-size: auto 330px;
+    background-position: -30px -30px;
+
+}
+
+.conf {
+    transition: all 1s;
 }
 
 .news > div:nth-child(1),
@@ -233,7 +401,7 @@ header {
     font-size: 20px;
     text-transform: uppercase;
     width: 100%;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .news > div:nth-child(1) div.header1,
@@ -243,7 +411,7 @@ header {
     font-size: 10px;
     text-transform: uppercase;
     width: 100%;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .news > div:nth-child(3) div.header2,
@@ -252,48 +420,55 @@ header {
 .news > div:nth-child(6) div.header2,
 .news > div:nth-child(7) div.header2,
 .news > div:nth-child(8) div.header2 {
-    background-color: white;
+    background-color: rgb(239, 239, 239);
     text-transform: uppercase;
     opacity: 0.8;
     margin: 10px;
 }
 
+div.content div.news div.bg:hover {
+    background-size: 330px;
+    background-position: -20px -70px;
+}
+
 div.content div.news div.bg {
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 300px;
+    background-position: 0 -50px;
+    transition: all 1s;
 }
 
 .news > div:nth-child(1) {
-    background-image: url("img/ponchiki_sladkoe_vypechka_132916_1280x720.jpg");
+    background-image: url("../img/ponchiki_sladkoe_vypechka_132916_1280x720.jpg");
 
 }
 
 .news > div:nth-child(2) {
-    background-image: url("img/oladi_zavtrak_iagody_125038_3840x2160.jpg");
+    background-image: url("../img/oladi_zavtrak_iagody_125038_3840x2160.jpg");
 }
 
 .news > div:nth-child(3) {
-    background-image: url("img/zavtrak_kasha_vafli_frukty_115145_3840x2160.jpg");
+    background-image: url("../img/zavtrak_kasha_vafli_frukty_115145_3840x2160.jpg");
 }
 
 .news > div:nth-child(4) {
-    background-image: url("img/meat.jpg");
+    background-image: url("../img/meat.jpg");
 }
 
 .news > div:nth-child(5) {
-    background-image: url("img/granola.jpg");
+    background-image: url("../img/granola.jpg");
 }
 
 .news > div:nth-child(6) {
-    background-image: url("img/avocado.jpg");
+    background-image: url("../img/avocado.jpg");
 }
 
 .news > div:nth-child(7) {
-    background-image: url("img/chernika.jpg");
+    background-image: url("../img/chernika.jpg");
 }
 
 .news > div:nth-child(8) {
-    background-image: url("img/kakao_zefir_ruki_135081_1280x720.jpg");
+    background-image: url("../img/kakao_zefir_ruki_135081_1280x720.jpg");
 }
 
 .news .conf img {
@@ -308,7 +483,7 @@ div.content div.news div.bg {
 }
 
 nav.tabs {
-    background-color: #F1F1F1;
+    background-color: rgb(239, 239, 239);
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -321,27 +496,37 @@ nav.tabs label {
     -moz-border-radius: 20px;
     border-radius: 20px;
     padding: 10px 20px;
-    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
-nav.tabs input:checked + label {
+#new-rec:checked ~ .tabs label[for="new-rec"],
+#recom:checked ~ .tabs label[for="recom"],
+#pop:checked ~ .tabs label[for="pop"]
+{
     background-color: #2F3032;
-    color: #ffffff;
+    color: rgb(239, 239, 239);
 }
 
-nav.tabs input {
+#new-rec, #recom, #pop {
     opacity: 0;
     visibility: hidden;
     display: none;
 }
-
+.recipes .is-new-rec,
+.recipes .is-pop,
+.recipes .is-recom {
+    display: none;
+}
+#new-rec:checked ~ .recipes .is-new-rec,
+#pop:checked ~ .recipes .is-pop,
+#recom:checked ~ .recipes .is-recom {
+    display: flex;
+}
 
 /*страница news*/
-
 
 .recipes {
     display: flex;
@@ -371,27 +556,27 @@ div.recipe-box {
 }
 
 .recipe-box:nth-child(1) > div:first-child {
-    background-image: url("img/pasta2.jpg");
+    background-image: url("../img/pasta2.jpg");
 }
 
 .recipe-box:nth-child(2) > div:first-child {
-    background-image: url("img/kotlety.jpg");
+    background-image: url("../img/kotlety.jpg");
 }
 
 .recipe-box:nth-child(3) > div:first-child {
-    background-image: url("img/tosty.jpg");
+    background-image: url("../img/tosty.jpg");
 }
 
 .recipe-box:nth-child(4) > div:first-child {
-    background-image: url("img/ pasta1.jpg");
+    background-image: url("../img/ pasta1.jpg");
 }
 
 .recipe-box:nth-child(5) > div:first-child {
-    background-image: url("img/vafli.jpg");
+    background-image: url("../img/vafli.jpg");
 }
 
 .recipe-box:nth-child(6) > div:first-child {
-    background-image: url("img/pizza.jpg");
+    background-image: url("../img/pizza.jpg");
 }
 
 .recipe-info {
@@ -400,6 +585,7 @@ div.recipe-box {
     border-left: none;
     box-sizing: border-box;
     flex-grow: 1;
+    overflow: hidden;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -413,6 +599,7 @@ div.recipe-box {
     height: auto;
     text-align: justify;
 }
+
 
 .recipe-info .info + div {
     position: relative;
@@ -483,6 +670,11 @@ div.recipe-box {
     flex-direction: column;
 }
 
+.recipe-box-footer .like span {
+    font-size: 13px;
+    color: rgb(211, 211, 211);
+}
+
 div.sn {
     display: flex;
     justify-content: space-between;
@@ -491,14 +683,40 @@ div.sn {
 
 div.like i,
 div.sn i {
-    color: lightgray;
+    color: rgb(211, 211, 211);
     text-decoration: none;
 }
 
 footer {
-    background-color: rgb(47, 48, 50);
+    background-color: rgb(0, 0, 0);
     height: 50px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-footer {
+    margin: 0 20px;
+    padding-inline-start: 0;
+}
+
+footer .list-footer a li {
+    display: inline-block;
+    color: rgb(150, 150, 150);
+    list-style: none;
+    padding-right: 20px;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.social-networks-footer i {
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.social-networks-footer {
+    margin: 0 20px;
 }
 
 .author-top {
@@ -513,6 +731,47 @@ footer {
     width: 65px;
     height: 65px;
     margin: 10px 15px;
+}
+
+.subscribe {
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0;
+
+}
+
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.subscribe label {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.subscribe input {
+    width: 100%;
+    height: 20px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.subscribe button {
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 0;
+    color: rgb(239, 239, 239);
+    background-color: rgb(0, 0, 0);
+    font-weight: bolder;
+    position: absolute;
+    border: none;
+    box-sizing: border-box;
 }
 
 @media only screen and (max-width: 768px) {
@@ -547,7 +806,7 @@ footer {
     .menu-btn {
         display: block;
         font-size: 32px;
-        color: #ffffff;
+        color: rgb(239, 239, 239);
     }
 
     .menu > input:checked ~ .menu-list {
@@ -557,6 +816,7 @@ footer {
     }
 }
 
+
 @media only screen and (max-width: 320px) {
     .news > div.conf {
         width: 100%;
@@ -565,6 +825,7 @@ footer {
     .search-box {
         width: 200px;
     }
+
     .icons {
         margin: 0 5px;
     }
@@ -574,12 +835,15 @@ footer {
         height: 400px;
         flex-wrap: wrap;
     }
+
     div.recipe-box .bg-rec {
         min-height: 200px;
     }
+
     .recipe-box-footer, .recipe-info {
         border: lightgray 1px solid;
     }
+
     .recipe-info {
         border-bottom: none;
     }
@@ -591,6 +855,7 @@ footer {
         margin: 10px 0 15px;
         padding: 5px 0;
     }
+
     nav.tabs label {
         padding: 5px 10px;
     }
