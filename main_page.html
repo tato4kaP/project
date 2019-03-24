@@ -70,27 +70,34 @@
                         data-content="Нет новых уведомлений">
                     <i class="fas fa-bell icons"></i>
                 </button>
-                <div class="container">
-                    <input id="modal" type="checkbox">
-                    <label class="modal-button" for="modal">
-                        <i class="fas fa-user icons"></i>
-                    </label>
-                    <label class="modal-background" for="modal"></label>
-                    <div class="modal-content">
-                        <form id="log" action="http://fe.it-academy.by/TestForm.php" method="post">
-                            <label class="modal-close" for="modal">&#10005;</label>
-                            <div class="form-content">
-                                <label>
-                                    Email:
-                                    <input type="email" required name="email">
-                                </label>
-                                <label>
-                                    Пароль:
-                                    <input type="password" required name="password">
-                                </label>
-                                <button type="submit">Войти</button>
+                <button data-toggle="modal" data-target="#login-modal">
+                    <i class="fas fa-user icons"></i>
+                </button>
+
+                <div class="modal" id="login-modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                        </form>
+                            <div class="modal-body">
+                                <form id="log" action="http://fe.it-academy.by/TestForm.php" method="post">
+                                    <div class="form-content">
+                                        <label>
+                                            Email:
+                                            <input type="email" required name="email">
+                                        </label>
+                                        <label>
+                                            Пароль:
+                                            <input type="password" required name="password">
+                                        </label>
+                                        <button type="submit">Войти</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,28 +110,28 @@
             </div>
             <h2>подбор рецептов</h2>
             <div class="filters">
-                <div class="select animated zoomIn">
-                    <!-- You can toggle select (disabled) -->
-                    <input type="radio" name="option">
-                    <i class="toggle icon icon-arrow-down"></i>
-                    <i class="toggle icon icon-arrow-up"></i>
-                    <span class="placeholder">Choose...</span>
-                    <label class="option">
-                        <input type="radio" name="option">
-                        <span class="title animated fadeIn"><i class="icon icon-speedometer"></i>Speedometer</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="option">
-                        <span class="title animated fadeIn"><i class="icon icon-fire"></i>Fire</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="option" disabled>
-                        <span class="title animated fadeIn"><i class="icon icon-handbag"></i>Handbag</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="option">
-                        <span class="title animated fadeIn"><i class="icon icon-badge"></i>Badge</span>
-                    </label>
+                <div class="selectboxes">
+                    <div class="custom-select">
+                        <select name="filter-1">
+                            <option value="-1">Любое блюдо</option>
+                            <option value="1">НЕ Любое блюдо</option>
+                        </select>
+                    </div>
+                    <div class="custom-select">
+                        <select name="filter-2">
+                            <option value="-1">Любое блюдо</option>
+                            <option value="1">НЕ Любое блюдо</option>
+                        </select>
+                    </div>
+                    <div class="custom-select">
+                        <select name="filter-3">
+                            <option value="-1">Любое блюдо</option>
+                            <option value="1">НЕ Любое блюдо</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="button"> Подобрать рецепты</button>
                 </div>
             </div>
             <div id="news" class="news">
@@ -482,6 +489,7 @@
 <script src="js/jquery-3.3.1.min.js" type="application/javascript"></script>
 <script src="js/popper.min.js" type="application/javascript"></script>
 <script src="js/bootstrap.bundle.min.js" type="application/javascript"></script>
+<script src="js/select.js" type="application/javascript"></script>
 <script src="js/main.js" type="application/javascript"></script>
 </body>
 </html>

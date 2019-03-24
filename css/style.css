@@ -7,6 +7,14 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+.modal-header {
+    padding: 0.5rem;
+    border-bottom: none;
+}
+.modal-body {
+    padding: 0.5rem 1rem;
+}
+
 /*Блок меню*/
 .wrapper {
     display: flex;
@@ -38,8 +46,6 @@ a {
 
 .menu a:hover,
 label,
-.container .modal-content,
-.container .modal-background,
 .icons:hover,
 .conf:hover,
 nav.tabs label,
@@ -91,7 +97,19 @@ div.menu-list {
 .filters {
     display: flex;
     position: relative;
-    z-index: 10;
+    padding: 10px 0 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+.filters .selectboxes {
+    display: flex;
+}
+.filters .actions .button {
+    background: #C3B089;
+    color: #fff;
+    outline: none;
+    font: 400 14px Oswald;
+    padding: 10px 40px;
 }
 
 .social-networks {
@@ -146,104 +164,6 @@ label {
     background: none;
     border: none;
     outline: none;
-}
-
-.container {
-    position: relative;
-}
-
-.container .modal-button {
-    position: relative;
-    display: block;
-    transition: all 250ms;
-}
-
-.container .modal-content,
-.container .modal-background {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
-}
-
-.container .modal-background {
-    transition: height 250ms;
-}
-
-.container .modal-content {
-    transform: scale(0);
-    transition: transform 500ms;
-}
-
-.container #modal {
-    display: none;
-}
-
-.container #modal:checked ~ .modal-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    visibility: visible;
-    opacity: 1;
-    transition: height 250ms;
-    z-index: 1;
-}
-
-.container #modal:checked ~ .modal-content {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -10%;
-    margin-left: -10%;
-    width: 24vw;
-    height: auto;
-    padding: 40px;
-    background-color: rgb(239, 239, 239);
-    border-radius: 3px;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    cursor: auto;
-    transform: scale(1);
-    transition: transform 500ms;
-    z-index: 1;
-}
-
-.container #modal:checked ~ .modal-content .modal-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 22px;
-    color: rgba(51, 51, 51, 0.4);
-    transition: color 200ms, transform 500ms;
-}
-
-.container #modal:checked ~ .modal-content .modal-close:hover, .container #modal:checked ~ .modal-content .modal-close:focus {
-    color: rgb(0, 0, 0);
-    transform: rotate(360deg);
-}
-
-.container #modal:checked ~ .modal-content p {
-    position: relative;
-    margin: 0 0 20px 0;
-    font-weight: 200;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.container #modal:checked ~ .modal-content .modal-content-button {
-    position: relative;
-    float: right;
-    margin: 0;
-    padding: 10px 20px;
-    color: rgb(239, 239, 239);
-    font-weight: 100;
-    border-radius: 3px;
-    background-color: rgb(211, 211, 211);
 }
 
 .form-content {
